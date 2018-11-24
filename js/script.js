@@ -5,7 +5,6 @@ FSJS project 2 - List Filter and Pagination
 
 
 
-
 // Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 const pag = document.querySelector('.page');
 const li = document.querySelectorAll('li');
@@ -21,14 +20,13 @@ searchDiv.appendChild(searchText)
 searchDiv.appendChild(search)
 let inps = document.getElementsByTagName('input')
 
-
 for (let i = 0; i < li.length; i++) {
     li[i].style.display = ''
     li[i].id = 'displayed'
 }
 
 let idSearch = document.querySelectorAll('#displayed')
-console.log (idSearch.length)
+console.log(idSearch.length)
 
 function showPage(num) {
     for (let i = 0; i < idSearch.length; i++) {
@@ -37,14 +35,15 @@ function showPage(num) {
     const pn = parseInt(num) * 10
     const pv = (parseInt(num) - 1) * 10
     for (let i = 0; i < li.length; i++) {
-    if (li[i].id == 'displayed') {
-    for (let z = pv; z < pn; z++)
-    if (z < idSearch.length) {
-            li[z].style.display = ''
+        if (li[i].id == 'displayed') {
+            for (let z = pv; z < pn; z++)
+                if (z < idSearch.length) {
+                    li[z].style.display = ''
 
-        } // this is for when we want to display 10 names or less on page.
+                } // this is for when we want to display 10 names or less on page.
+        }
     }
-}};
+};
 
 showPage(1) //running it once for first page as to not have a bland page
 
